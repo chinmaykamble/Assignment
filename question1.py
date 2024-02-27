@@ -1,5 +1,8 @@
 ##### Question 1
-
+"""
+input: 504678
+output: 5,04,67
+"""
 ### solution one using locale
 import locale
 locale.setlocale(locale.LC_NUMERIC, "en_IN") # set the locale to Indian English
@@ -23,5 +26,11 @@ divide the string into 2 digit substring excluding the last 3 characters right t
 ",".join(...) is a string method that joins the elements of a list with a specified separator, which is ',' 
 """
 
-d = ",".join([s[x-2:x] for x in range(-3, -len(s), -2)][::-1] + [s[-3:]])
-print(d)
+input1 = ",".join([s[x-2:x] for x in range(-3, -len(s), -2)][::-1] + [s[-3:]])
+
+input2 = ",".join([s[x-2:x] for x in range(-1, -len(s), -2)][::-1])
+
+## I am not sure if the output format in the given question was a correct notation for INR so I have provided answer in both the ways
+print(input1) # output: 5,04,678
+
+print(input2) # output: 5,04,67 ## maybe printing mistake in the question.
